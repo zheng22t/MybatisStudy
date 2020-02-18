@@ -1,0 +1,7 @@
+/mybatis-01/target/
+.gitignore
+.idea/.gitignore
+.idea/compiler.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/vcs.xml
