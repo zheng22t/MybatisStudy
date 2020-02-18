@@ -1,6 +1,7 @@
 package com.sstype.mybatis.mapper;
 
 import com.sstype.mybatis.pojo.User;
+import com.sstype.mybatis.utils.MybatisUtils;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,14 +18,9 @@ import java.util.List;
  */
 public class UserMapperTest {
     @Test
-    public void getAllUser() throws IOException {
-        //构建 SqlSessionFactory
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
+    public void getAllUser() {
         //获取 SqlSession
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+        SqlSession sqlSession = MybatisUtils.getSession();
         //获取 Mapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         //查询
